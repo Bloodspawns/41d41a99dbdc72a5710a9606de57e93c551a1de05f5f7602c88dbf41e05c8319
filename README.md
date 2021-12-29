@@ -20,5 +20,6 @@ repositories {
    maven(url = "https://repo.runelite.net/net/runelite/runelite-api/maven-metadata.xml") // used to fetch runelite dependencies
 }
 ```
-Then add `compileOnly("Bloodspawns:bluelite-api:1.0")` to `dependencies`. The latest api will always be loaded into your project this way. 
+Then add `compileOnly("Bloodspawns:bluelite-api:1.0")` to `dependencies`. If the dependency does not update you can force it to be downloaded again on next gradle sync by deleting the current one.
+To do this, in intellij, in the project window expand External Libraries and look for `Bloodspawns:bluelite-api:1.0` then expand that and delete the jar file. Next use gradle sync to download the newest version of the jar file again.
 **Do not include any of the api files in your plugin jar since this can cause trouble by over shadowing the api class files managed by the client.**
